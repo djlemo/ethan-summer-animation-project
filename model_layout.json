@@ -1,0 +1,304 @@
+{
+  "metadata": {
+    "formatVersion": "1.0",
+    "simulationId": "grocery_store_simulation_20250519",
+    "name": "Grocery Store Flow",
+    "description": "A simulation of customer flow through a grocery store.",
+    "createdAt": "2025-05-19T10:35:00Z",
+    "duration": 3600.0,
+    "timeUnit": "SECONDS",
+    "replication": 1
+  },
+  "model": {
+    "activities": [
+      {
+        "id": "gen_entrance",
+        "name": "Entrance",
+        "type": "Generator",
+        "x": 35,
+        "y": 300,
+        "width": 80,
+        "height": 60,
+        "outputBuffer": {
+          "x": 110,
+          "y": 300,
+          "capacity": 10
+        }
+      },
+      {
+        "id": "act_cart",
+        "name": "Grab Cart",
+        "type": "Activity",
+        "x": 185,
+        "y": 60,
+        "width": 80,
+        "height": 60,
+        "capacity": 10,
+        "outputBuffer": {
+          "x": 260,
+          "y": 60,
+          "capacity": 20
+        }
+      },
+      {
+        "id": "act_basket",
+        "name": "Grab Basket",
+        "type": "Activity",
+        "x": 185,
+        "y": 520,
+        "width": 80,
+        "height": 60,
+        "capacity": 10,
+        "outputBuffer": {
+          "x": 260,
+          "y": 520,
+          "capacity": 20
+        }
+      },
+      {
+        "id": "act_shopping",
+        "name": "Shop",
+        "type": "Activity",
+        "x": 330,
+        "y": 300,
+        "width": 100,
+        "height": 60,
+        "inputBuffer": {
+          "x": 260,
+          "y": 300,
+          "capacity": 30
+        },
+        "outputBuffer": {
+          "x": 400,
+          "y": 300,
+          "capacity": 30
+        }
+      },
+      {
+        "id": "act_checkout",
+        "name": "Checkout",
+        "type": "Activity",
+        "x": 470,
+        "y": 300,
+        "width": 80,
+        "height": 60,
+        "inputBuffer": {
+          "x": 400,
+          "y": 300,
+          "capacity": 50
+        },
+        "outputBuffer": {
+          "x": 545,
+          "y": 300,
+          "capacity": 50
+        }
+      },
+      {
+        "id": "act_customer_service",
+        "name": "Customer Service",
+        "type": "Activity",
+        "x": 545,
+        "y": 480,
+        "width": 80,
+        "height": 60,
+        "inputBuffer": {
+          "x": 500,
+          "y": 480,
+          "capacity": 20
+        },
+        "outputBuffer": {
+          "x": 590,
+          "y": 480,
+          "capacity": 20
+        }
+      },
+      {
+        "id": "act_bagging",
+        "name": "Bag Items",
+        "type": "Activity",
+        "x": 620,
+        "y": 300,
+        "width": 80,
+        "height": 60,
+        "inputBuffer": {
+          "x": 545,
+          "y": 300,
+          "capacity": 10
+        },
+        "outputBuffer": {
+          "x": 690,
+          "y": 300,
+          "capacity": 10
+        }
+      },
+      {
+        "id": "gen_exit",
+        "name": "Exit",
+        "type": "Exit",
+        "x": 760,
+        "y": 300,
+        "width": 80,
+        "height": 60,
+        "inputBuffer": {
+          "x": 690,
+          "y": 300,
+          "capacity": 10
+        }
+      }
+    ],
+    "resources": [],
+    "generators": [],
+    "connectors": [
+      {
+        "id": "con_entrance_to_cart_path",
+        "name": "Entrance to Cart Path",
+        "type": "Connector",
+        "sourceId": "gen_entrance",
+        "targetId": "act_cart",
+        "sourceX": 35,
+        "sourceY": 300,
+        "targetX": 110,
+        "targetY": 180
+      },
+      {
+        "id": "con_midpoint_to_cart",
+        "name": "Midpoint to Cart",
+        "type": "Connector",
+        "sourceId": "gen_entrance",
+        "targetId": "act_cart",
+        "sourceX": 110,
+        "sourceY": 180,
+        "targetX": 185,
+        "targetY": 60
+      },
+      {
+        "id": "con_entrance_to_basket_path",
+        "name": "Entrance to Basket Path",
+        "type": "Connector",
+        "sourceId": "gen_entrance",
+        "targetId": "act_basket",
+        "sourceX": 35,
+        "sourceY": 300,
+        "targetX": 110,
+        "targetY": 410
+      },
+      {
+        "id": "con_midpoint_to_basket",
+        "name": "Midpoint to Basket",
+        "type": "Connector",
+        "sourceId": "gen_entrance",
+        "targetId": "act_basket",
+        "sourceX": 110,
+        "sourceY": 410,
+        "targetX": 185,
+        "targetY": 520
+      },
+      {
+        "id": "con_cart_to_shop_path",
+        "name": "Cart to Shop Path",
+        "type": "Connector",
+        "sourceId": "act_cart",
+        "targetId": "act_shopping",
+        "sourceX": 185,
+        "sourceY": 60,
+        "targetX": 260,
+        "targetY": 180
+      },
+      {
+        "id": "con_cart_path_to_shop",
+        "name": "Cart Path to Shop",
+        "type": "Connector",
+        "sourceId": "act_cart",
+        "targetId": "act_shopping",
+        "sourceX": 260,
+        "sourceY": 180,
+        "targetX": 330,
+        "targetY": 300
+      },
+      {
+        "id": "con_basket_to_shop_path",
+        "name": "Basket to Shop Path",
+        "type": "Connector",
+        "sourceId": "act_basket",
+        "targetId": "act_shopping",
+        "sourceX": 185,
+        "sourceY": 520,
+        "targetX": 260,
+        "targetY": 410
+      },
+      {
+        "id": "con_basket_path_to_shop",
+        "name": "Basket Path to Shop",
+        "type": "Connector",
+        "sourceId": "act_basket",
+        "targetId": "act_shopping",
+        "sourceX": 260,
+        "sourceY": 410,
+        "targetX": 330,
+        "targetY": 300
+      },
+      {
+        "id": "con_shop_to_checkout",
+        "name": "Shop to Checkout",
+        "type": "Connector",
+        "sourceId": "act_shopping",
+        "targetId": "act_checkout",
+        "sourceX": 330,
+        "sourceY": 300,
+        "targetX": 470,
+        "targetY": 300
+      },
+      {
+        "id": "con_checkout_to_customer_service",
+        "name": "Checkout to Customer Service",
+        "type": "Connector",
+        "sourceId": "act_checkout",
+        "targetId": "act_customer_service",
+        "sourceX": 470,
+        "sourceY": 300,
+        "targetX": 545,
+        "targetY": 480,
+        "probability": 0.7
+      },
+      {
+        "id": "con_customer_service_to_bagging",
+        "name": "Customer Service to Bagging",
+        "type": "Connector",
+        "sourceId": "act_customer_service",
+        "targetId": "act_bagging",
+        "sourceX": 545,
+        "sourceY": 480,
+        "targetX": 620,
+        "targetY": 300
+      },
+      {
+        "id": "con_checkout_to_bagging",
+        "name": "Checkout to Bagging",
+        "type": "Connector",
+        "sourceId": "act_checkout",
+        "targetId": "act_bagging",
+        "sourceX": 470,
+        "sourceY": 300,
+        "targetX": 620,
+        "targetY": 300,
+        "probability": 0.3
+      },
+      {
+        "id": "con_bagging_to_exit",
+        "name": "Bagging to Exit",
+        "type": "Connector",
+        "sourceId": "act_bagging",
+        "targetId": "gen_exit",
+        "sourceX": 620,
+        "sourceY": 300,
+        "targetX": 760,
+        "targetY": 300
+      }
+    ]
+  },
+  "references": {
+    "layoutFiles": ["diagram.svg"],
+    "visualConfig": "shared_visual_config.json",
+    "replications": ["replications/rep_001/animation_manifest_rep_001.json"]
+  }
+}

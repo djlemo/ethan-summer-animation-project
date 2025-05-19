@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "formatVersion": "1.0",
+    "description": "Visual configuration for grocery store simulation",
+    "createdAt": "2025-05-19T11:00:00Z"
+  },
+  "visualization": {
+    "backgroundMode": "svg",
+    "backgroundSvgPath": "diagram.svg",
+    "spriteAtlas": {
+      "default": "sprites/customer.jpg",
+      "definitions": "sprites/single_sprite.json"
+    },
+    "entityTypes": {
+      "Customer": {
+        "defaultSprite": "customer_sprite",
+        "states": {
+          "shopping": {
+            "sprite": "customer_sprite",
+            "description": "Customer shopping state"
+          },
+          "checkout": {
+            "sprite": "customer_sprite",
+            "description": "Customer at checkout"
+          }
+        }
+      }
+    }
+  },
+  "uiElements": {
+    "activityLabels": {
+      "enabled": true,
+      "fontSize": 12,
+      "fontColor": "#000000",
+      "backgroundColor": "rgba(255, 255, 255, 0.7)"
+    },
+    "entityLabels": {
+      "enabled": true,
+      "fontSize": 10,
+      "fontColor": "#000000",
+      "backgroundColor": "rgba(255, 255, 255, 0.7)"
+    }
+  }
+}

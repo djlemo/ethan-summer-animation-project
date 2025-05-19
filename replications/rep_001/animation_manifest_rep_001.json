@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "formatVersion": "1.0",
+    "simulationId": "grocery_store_simulation_20250519",
+    "replicationId": "rep_001",
+    "name": "Grocery Store Flow - Replication 001",
+    "description": "First replication of the grocery store simulation",
+    "createdAt": "2025-05-19T11:00:00Z",
+    "duration": 3600.0,
+    "timeUnit": "SECONDS"
+  },
+  "entityPathFiles": [
+    "entity_paths/batch_001_rep001.json"
+  ],
+  "statisticsFiles": [],
+  "parameters": {
+    "customerArrivalRate": 0.1,
+    "checkoutServiceTime": 120,
+    "shoppingTime": 600
+  },
+  "visualization": {
+    "playbackSpeed": 1.0,
+    "showEntityLabels": true,
+    "showActivityLabels": true
+  }
+}

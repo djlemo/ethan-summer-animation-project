@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "formatVersion": "1.0",
+    "simulationId": "grocery_store_simulation_20250519",
+    "replicationId": "rep_001",
+    "batchId": "batch_001",
+    "description": "Entity paths for batch 001 of replication 001",
+    "createdAt": "2025-05-19T11:00:00Z"
+  },
+  "entities": [
+    {
+      "id": "customer_001",
+      "type": "Customer",
+      "entryTime": 0,
+      "path": [
+        {
+          "x": 35,
+          "y": 300,
+          "time": 0,
+          "activity": "Entrance",
+          "state": "shopping",
+          "duration": 500
+        },
+        {
+          "x": 110,
+          "y": 180,
+          "time": 10,
+          "activity": "",
+          "state": "shopping",
+          "duration": 500
+        },
+        {
+          "x": 185,
+          "y": 60,
+          "time": 20,
+          "activity": "Grab Cart/Basket",
+          "state": "shopping",
+          "duration": 1500
+        },
+        {
+          "x": 260,
+          "y": 180,
+          "time": 30,
+          "activity": "",
+          "state": "shopping",
+          "duration": 500
+        },
+        {
+          "x": 330,
+          "y": 300,
+          "time": 40,
+          "activity": "Shop",
+          "state": "shopping",
+          "duration": 2000
+        },
+        {
+          "x": 400,
+          "y": 300,
+          "time": 50,
+          "activity": "",
+          "state": "shopping",
+          "duration": 500
+        },
+        {
+          "x": 470,
+          "y": 300,
+          "time": 60,
+          "activity": "Checkout",
+          "state": "checkout",
+          "duration": 2000
+        },
+        {
+          "x": 545,
+          "y": 300,
+          "time": 70,
+          "activity": "",
+          "state": "checkout",
+          "duration": 500
+        },
+        {
+          "x": 620,
+          "y": 300,
+          "time": 80,
+          "activity": "Bag Items",
+          "state": "checkout",
+          "duration": 1500
+        },
+        {
+          "x": 690,
+          "y": 300,
+          "time": 90,
+          "activity": "",
+          "state": "checkout",
+          "duration": 500
+        },
+        {
+          "x": 760,
+          "y": 300,
+          "time": 100,
+          "activity": "Exit",
+          "state": "checkout",
+          "duration": 0
+        }
+      ]
+    },
+    {
+      "id": "customer_002",
+      "type": "Customer",
+      "entryTime": 20,
+      "path": [
+        {
+          "x": 35,
+          "y": 300,
+          "time": 20,
+          "activity": "Entrance",
+          "state": "shopping",
+          "duration": 500
+        },
+        {
+          "x": 110,
+          "y": 410,
+          "time": 30,
+          "activity": "",
+          "state": "shopping",
+          "duration": 500
+        },
+        {
+          "x": 185,
+          "y": 520,
+          "time": 40,
+          "activity": "Grab Basket",
+          "state": "shopping",
+          "duration": 1500
+        },
+        {
+          "x": 260,
+          "y": 410,
+          "time": 50,
+          "activity": "",
+          "state": "shopping",
+          "duration": 500
+        },
+        {
+          "x": 330,
+          "y": 300,
+          "time": 60,
+          "activity": "Shop",
+          "state": "shopping",
+          "duration": 2000
+        },
+        {
+          "x": 400,
+          "y": 300,
+          "time": 70,
+          "activity": "",
+          "state": "shopping",
+          "duration": 500
+        },
+        {
+          "x": 470,
+          "y": 300,
+          "time": 80,
+          "activity": "Checkout",
+          "state": "checkout",
+          "duration": 2000
+        },
+        {
+          "x": 545,
+          "y": 300,
+          "time": 90,
+          "activity": "",
+          "state": "checkout",
+          "duration": 500
+        },
+        {
+          "x": 620,
+          "y": 300,
+          "time": 100,
+          "activity": "Bag Items",
+          "state": "checkout",
+          "duration": 1500
+        },
+        {
+          "x": 690,
+          "y": 300,
+          "time": 110,
+          "activity": "",
+          "state": "checkout",
+          "duration": 500
+        },
+        {
+          "x": 760,
+          "y": 300,
+          "time": 120,
+          "activity": "Exit",
+          "state": "checkout",
+          "duration": 0
+        }
+      ]
+    }
+  ]
+}

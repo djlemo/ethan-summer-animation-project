@@ -1,0 +1,7 @@
+{
+  "customer_sprite": {
+    "frames": [
+      {"name": "customer.jpg", "rect": [0, 0, 64, 64]}
+    ]
+  }
+}
